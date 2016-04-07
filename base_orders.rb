@@ -35,15 +35,15 @@ request_parameters =
       { 'Authorization' => "Bearer #{token}" }
 
     request_parameters =
-      { 'order'  => 'created',
-        'sort'   => 'desc',
+      { 'start_ordered'  => '2016-03-01',
+        'end_ordered'   => '2016-04-01',
         'limit'  => '10',
         'offset' => '0' }
 
       uri =
         URI([
           API_HOST,
-          "/#{API_VERSION}/items/?",
+          "/#{API_VERSION}/orders/?",
           URI.encode_www_form(request_parameters)]
             .join)
 
