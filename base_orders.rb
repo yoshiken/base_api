@@ -25,18 +25,15 @@ request_parameters =
     parsed_response =
       JSON.parse response.body
 
-
-    p parsed_response
-
-
     token=parsed_response["access_token"]
 
     header_parameters =
       { 'Authorization' => "Bearer #{token}" }
 
+
     request_parameters =
-      { 'start_ordered'  => '2016-03-01',
-        'end_ordered'   => '2016-04-01',
+      { 'start_ordered'  => ARGV[0],
+        'end_ordered'   => ARGV[1],
         'limit'  => '10',
         'offset' => '0' }
 
